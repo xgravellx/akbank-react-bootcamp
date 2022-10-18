@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background-color: #f4f4f4;
+    color: #323232;
+}
+.navbar {
+    background-color: #dc3545;
+    margin-left: .3rem;
+    border-radius: .3rem;
+
+}
+.container {
+    margin-top: 2rem;
+}
+.kapsam {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #dbdbdb;
+    border-radius: .3rem;
+    background-color: white;
+    color: #323232;
+}
+.top-m {
+    padding: 0 !important;
+    background-color: #f4f4f4;
+    border: none !important;
+    
+}
+.labell {
+    font-size: .7rem;
+    user-select: none;
+}
+/* .top-middle {
+    margin: 0.3rem;
+} */
+.c-title {
+    margin-bottom: .5rem;
+    user-select: none;
+    text-align: center;
+}
+.top-middle {
+    border: 1px solid #dbdbdb;
+    background-color: white;
+    border-radius: .3rem;
+    padding: 1rem;
+}
+.havale-bolumu {
+    margin-bottom: 1rem;
+} 
+.bakiye {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.kisi-ekle-btn {
+    display: block;
+    width: 100%;
+}
+.money-send {
+    display: flex;
+    justify-content: space-between;
+}
+.money-send-in {
+    width: 50%;
+    margin-bottom: .5rem;
+}
+.money-send-select {
+    width: 100%;
+}
+.scrollList {
+    padding-right: 0;
+}
+.userlistli {
+    margin: 0 .4rem;
+    cursor: pointer;
+}
+.userLi {
+    font-size: small;
+}

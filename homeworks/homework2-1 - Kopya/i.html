@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="./src/css/style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <img src="./src/img/logo.svg" alt="">
+        </nav>
+        <!-- 1. Satır -->
+        <div class="row">
+            <!-- Kişi Ekleme Bölümü -->
+            <div class="col kapsam kisi-ekleme-bolumu">
+                <div class="c-title">Yeni Kullanıcı</div>
+                <form id="addUser">
+                    <label for="accountName" class="labell">Ad Soyad</label>
+                    <input type="text" class="form-control form-control-sm mt-1 mb-3" id="accountName" placeholder="Name Surname">
+                    <label for="accountBalance" class="labell">Tutar</label>
+                    <input type="number" class="form-control form-control-sm bakiye mt-1 mb-4" id="accountBalance" placeholder="Bakiye">
+<!--                     <button type="submit" class="btn btn-danger btn-sm kisi-ekle-btn" onclick="addAccount()">Ekle</button>  --> 
+                    <input class="btn btn-sm btn-danger w-100" type="submit" value="Save"> 
+                </form>
+            </div>
+            <!-- Havale ve Satış Bölümü -->
+            <div class="col-6 kapsam top-m">
+                <div class="row top-middle havale-bolumu">
+
+                    <!-- Havale Bölümü -->
+                    <div class="c-title" style="text-align: center;">Havale</div>
+                    <div class="row money-send">
+                        <div class="money-send-in">
+                            <label for="senderNamesMoney" class="labell">Gönderen</label>
+                            <select class="form-select form-select-sm mt-1 mb-1 money-send-select" name="senderNames" id="senderNamesMoney"></select>
+                        </div>
+                        <div class="money-send-in">
+                            <label for="receiverNamesMoney" class="labell">Alıcı</label>
+                            <select class="form-select form-select-sm mt-1 mb-1 money-send-select" name="receiverNames" id="receiverNamesMoney" ></select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="money-send-in">
+                            <label for="transferAmount-money" class="labell">Tutar</label>
+                            <input class="form-control form-control-sm mt-1" type="number" name="transferAmount-money" id="transferAmount"/>
+                        </div>
+                        <div class="money-send-in">
+                            <label class="labell"></label>
+                            <button type="submit" class="btn btn-outline-danger btn-sm mt-1 kisi-ekle-btn" id="transferMoneyBtn" onclick="transferMoney()">Gönder</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Satış Bölümü -->
+                <div class="row top-middle satis-bolumu">
+                    <div class="c-title" style="text-align: center;">Satış</div>
+                    <div class="row ">
+                        <div class="money-send-in">
+                            <label for="senderNamesSatis" class="labell">Gönderen</label>
+                            <select class="form-select form-select-sm mt-1 mb-1 money-send-select" name="senderNames-satis" id="senderNamesSatis"></select>
+                        </div>
+                        <div class="money-send-in">
+                            <label for="receiverNamesSatis" class="labell">Alıcı</label>
+                            <select class="form-select form-select-sm mt-1 mb-1 money-send-select" name="receiverNames-satis" id="receiverNamesSatis" ></select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="money-send-in">
+                            <label for="transferProduct" class="labell">Ürün Adı</label>
+                            <select class="form-select form-select-sm mt-1 mb-1 money-send-select" name="transferProduct" id="transferProduct" ></select>
+                        </div>
+                        <div class="money-send-in">
+                            <label class="labell"></label>
+                            <button type="submit" class="btn btn-outline-danger btn-sm mt-1 kisi-ekle-btn" onclick="">Gönder</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Ürün Ekleme -->
+            <div class="col kapsam urun-adi">
+                <div class="c-title">Ürün Ekleme</div>
+                <form id="addProduct">
+                    <label for="productName" class="labell">Ürün Adı</label>
+                    <input type="text" class="form-control form-control-sm mt-1 mb-3" id="productName" placeholder="Ürün Adı">
+                    <label for="productQuantity" class="labell">Miktar</label>
+                    <input type="number" class="form-control form-control-sm bakiye mt-1 mb-3" id="productQuantity" placeholder="Miktar">
+                    <label for="productPrice" class="labell">Fiyat</label>
+                    <input type="number" class="form-control form-control-sm bakiye mt-1 mb-4" id="productPrice" placeholder="Fiyat">
+                    <button type="submit" class="btn btn-danger btn-sm kisi-ekle-btn" onclick="newAccount()">Ekle</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- 2. Satır -->
+        <div class="row">
+            <!-- Kişi Listesi -->
+            <div class="col kapsam kisi-litesi">
+                <div class="c-title">Kişi Listesi</div>
+                <div class="row" style="text-align: center;">
+                    <ul class="list-group mt-4 scrollList" id="accountsList">
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Hesap Hareketleri -->
+            <div class="col-6 kapsam hesap-hareketleri">
+                <div class="c-title">Hesap Hareketleri</div>
+            </div>
+
+            <!-- Ürün Listesi -->
+            <div class="col kapsam urun-listesi">
+                <div class="c-title">Ürün Listesi</div>
+                <div class="row" style="text-align: center;">
+                    <ul class="list-group mt-4 scrollList" id="productList">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <div class="root"></div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./main.js"></script>
+</body>
+</html>

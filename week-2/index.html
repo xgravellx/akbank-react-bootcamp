@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <template id="course__template">
+            <div class="course">
+                <div class="course__cover"><img src="{{img}}" alt=""></div>
+                <div class="course__title">{{title}}</div>
+                <div class="course__dates">{{startDate}} - {{endDate}}</div>
+                <div class="course__online">{{type}}</div>
+                <div class="course__location">{{location}}</div>
+            </div>    
+    </template>
+
+    <div id="root">  </div>
+
+
+    <script src="./main.js"></script>
+</body>
+</html>

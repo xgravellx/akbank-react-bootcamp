@@ -1,0 +1,15 @@
+.course {
+    display: inline-block;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.course__cover {
+    width: 90%;
+    margin: auto;
+}
+
+.course__cover > img {
+    width: 100%;
+}
